@@ -1,15 +1,27 @@
 /*
-Set 1C
+Set 2C
 student - Astaikin Evgenii
 15112024
 */
 #include <iostream>
 using namespace std;
 
-int main() {
-    const int n = 4;
-    int numbers[n] {11, 12, 13, 14};
-    for (int i = 0; i < n; i++) {
-        std::cout << numbers[i] << std::endl;
+int a[5] = {};
+
+int main()
+{
+    for (int i = 0; i < 5; i++)
+    {
+        cin >> a[i];
+
     }
+    cout << endl;
+    int j = 0;
+    while (j < 5)
+    {
+        cout << a[j] << "";
+        j++;
+    }
+
+    return 0;
 }
