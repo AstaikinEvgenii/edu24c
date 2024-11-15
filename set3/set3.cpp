@@ -1,7 +1,7 @@
 /*
 Set 3
 student - AstaikinEvgenii
-09112024
+09112024 1113
 */
 #include <iostream>
 using namespace std;
