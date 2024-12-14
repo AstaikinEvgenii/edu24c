@@ -1,44 +1,70 @@
 #include <iostream>
 using namespace std;
 
-struct student
+struct Student
 {
     string name;
     int groupNumber;
-    int averageGrade;
+    double averageGrade;
 };
 
-student nstudent[] =
-{
-{"misha" , 15, 5},
-{"ivan" , 15, 5},
-{"oleg" , 15, 4},
-{"sanek" , 15, 3},
-{"yarik" , 15, 3},
-};
-
-int result;
-int arr[5] = {5, 5 , 4 , 3 , 3}
-
-for (int i = 0; i < 5; i++)
-{
-    if arr[i] > arr [i + 1]
+void printStudentsSet1(Student *s)
+{   
+    for (int i = 0; i < 3; ++i)
+    {
+        cout << s[i].name << endl;
+        cout << s[i].groupNumber << endl;
+        cout << s[i].averageGrade << endl;
+    }
 }
 
-
-void total_score()
-{
-    for (int i = 0; i < 5; i++)
+void printStudentsSet2(Student *s)
+{   
+    for (int i = 0; i < 3; ++i)
     {
-        result = result + nstudent[i].averageGrade;
-
+        cout << s[i].name << endl;
+        cout << s[i].groupNumber << endl;
+        cout << s[i].averageGrade << endl;
     }
 
-    cout << "result " << result/5 << endl;
+    double arr[3] = {};
+    for (int j = 0; j < 3; j++)
+    {
+        arr[j] = s[j].averageGrade;
+    }
+
+    double buffer{};
+    for (int k = 0; k < 3; k++)
+    {
+        for (int kk = 0; kk < 3; kk++)
+        {
+            if (arr[kk] < arr[kk + 1])
+            {
+                buffer = arr[kk];
+                arr[kk] = arr[kk + 1];
+                arr[kk + 1] = buffer;
+            }
+        }
+    }
+
+    for (int l = 0; l < 3; l++)
+    {
+        cout << arr[l] << " ";
+    }
 }
 
 int main()
 {
-    total_score();
+    Student MGU[] = 
+    {
+        {"vanek", 303, 4.1},
+        {"lexa", 112, 3.5},
+        {"sanek", 103, 4.8},
+         {"alex", 92, 2.9},
+         {"oleg", 204, 3.3},
+    };
+    
+    printStudentsSet2(MGU);
+    
     return 0;
 }
