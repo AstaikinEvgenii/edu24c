@@ -1,30 +1,69 @@
 #include <iostream>
 using namespace std;
 
-int c{};
-int k{};
-
-int main()
+struct Student
 {
-    cout << "How many numbers?" << endl;
-    cin >> c;
+    string name;
+    int groupNumber;
+    double averageGrade;
+};
 
-    int a[c] = {};
+Student MGU[] = 
+{
+    {"Ivan", 104,     3.8},
+    {"Jenia", 104,    4.2},
+    {"Viktoria", 101, 4.0},
+    {"Vitia", 101,    4.7},
+    {"Matvey", 104,   4.8}
+};
 
-    for (int i = 0; i < c; i++)
+void averageGradeAll()
+{
+    double result{};
+    for (int i = 0; i < 5; i++)
     {
-        cin >> a[i];
+        result = result + MGU[i].averageGrade;
     }
 
-    for (int j = 0; j < c; j++)
+    cout << result << endl;
+    cout << "result: " << (result / 5.0) << endl;
+
+    double arr[5];
+
+    for (int j = 0; j < 5; j++)
     {
-        if (a[j] % 4 == 0)
+        arr[j] = MGU[j].averageGrade;
+    }
+
+    for(int l = 0; l < 5; l++)
+    {
+        cout << arr[l] << " ";
+    }
+
+    cout << endl;
+
+    double buffer{};
+    for (int y = 0; y > 5; y++)
+    {
+        for (int k = 0; k < 5; k++)
         {
-            k++;
+            if (arr[k] < arr[k + 1])
+            {
+                buffer = arr[k];
+                arr[k] = arr[k + 1];
+                arr[k + 1] = buffer;
+            }
         }
     }
 
-    cout << k << endl;
+    for(int l = 0; l < 5; l++)
+    {
+        cout << arr[l] << " ";
+    }
+}
 
+int main()
+{
+    averageGradeAll();
     return 0;
 }
