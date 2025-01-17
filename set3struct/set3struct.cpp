@@ -18,7 +18,7 @@ Student allStudentMGU[]
     {"Emelin", 110, "hogwarts"}
 };
 
-void studentSearch()
+void studentSearch(Student &stLocal)
 {
     while(1)
     {
@@ -40,6 +40,6 @@ void studentSearch()
 
 int main()
 {
-    studentSearch();
+    studentSearch(allStudentMGU);
     return 0;
 }
